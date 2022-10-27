@@ -18,18 +18,22 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  my_first_job:
-    runs_on : macos-latest
-    name: My first job
+  Ubuntu:
+    name: Ubuntu
+    runs-on: ubuntu-latest
     steps:
-      - uses: print_version
-      - run: echo hey 
-  my_second_job:
-    runs_on : macos-latest
-    name: My first job
+      - name : get_version
+        run: echo command
+  macos:
+    name: macos
+    runs-on: macos-latest
     steps:
-      - uses: print_version
-      - run: echo hey 
-  # This workflow contains a single job called "build"
-    build:
+      - name : get_version
+        run: echo sw_vers -productVersion
+  Windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - name : get_version
+        run: echo (Get-ItemProperty -Path c:\windows\system32\hal.dll).VersionInfo.FileVersion
       
