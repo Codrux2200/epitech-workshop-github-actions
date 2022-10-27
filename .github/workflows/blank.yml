@@ -29,7 +29,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name : get_version
-        run: echo sw_vers -productVersion
+        run:   sw_vers -productVersion
   Windows:
     name: Windows
     runs-on: windows-latest
