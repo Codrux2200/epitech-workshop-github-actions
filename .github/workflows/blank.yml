@@ -27,6 +27,7 @@ jobs:
   macos:
     name: macos
     runs-on: macos-latest
+    container: alpine
     steps:
       - name : get_version
         run:   sw_vers -productVersion
